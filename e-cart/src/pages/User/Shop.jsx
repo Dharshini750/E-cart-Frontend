@@ -3,7 +3,7 @@ import Cart from './Cart';
 import { getproducts } from '../../services/api';
 
 const initialproduct = [
-      { id: 1, brand: "Clara's", name: 'Women Top', price: '$35.99', salePrice: '$29.99', image: 'https://ik.imagekit.io/iayn5eqir/p1.webp?updatedAt=1728494405503', size: 's', gender: 'female', type: 'dress' },
+      { id: 1, brand: "Clara's", name: 'Women Top', price: '$35.99', salePrice: '$29.99', image: 'src/assets/img/p1.webp', size: 's', gender: 'female', type: 'dress' },
       { id: 2, brand: 'Zudio', name: 'Winter Jacket', price: '$55.99', salePrice: '$45.99', image: 'src/assets/img/p2.jfif', size: 'xl', gender: 'unisex', type: 'dress' },
       { id: 3, brand: 'Zudio', name: 'Crop Top', price: '$15.99', salePrice: '$12.99', image: 'src/assets/img/p3.jfif', size: 'm', gender: 'female', type: 'dress' },
       { id: 4, brand: 'Biba', name: 'Lehanga', price: '$89.99', salePrice: '$79.99', image: 'src/assets/img/p4.jfif', size: 'xl', gender: 'female', type: 'dress' },
