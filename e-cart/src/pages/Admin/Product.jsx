@@ -8,6 +8,7 @@ const AddProduct = () => {
     salePrice: 0,
     brand: '',
     size: '',
+    image:'',
     stock: 0,
   })
 
@@ -35,6 +36,7 @@ const AddProduct = () => {
         <input type="number" name="price" onChange={handleChange} placeholder="Price" required className='p-1 w-[70%] h-[3rem] bg-gray-200 focus:outline-none focus:border-b-2 focus:border-gray-600' />
         <input type="number" name="salePrice" onChange={handleChange} placeholder="Sale Price" className='p-1 w-[70%] h-[3rem] bg-gray-200 focus:outline-none focus:border-b-2 focus:border-gray-600' />
         <input type="text" name="size" onChange={handleChange} placeholder="Size" className='p-1 w-[70%] h-[3rem] bg-gray-200 focus:outline-none focus:border-b-2 focus:border-gray-600' />
+        <input type="text" name="image" onChange={handleChange} placeholder="Image Url" className='p-1 w-[70%] h-[3rem] bg-gray-200 focus:outline-none focus:border-b-2 focus:border-gray-600' />
         <input type="text" name="stock" onChange={handleChange} placeholder="Stock" className='p-1 w-[70%] h-[3rem] bg-gray-200 focus:outline-none focus:border-b-2 focus:border-gray-600' />
         
         <button type="submit">Add Product</button>
