@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Logox from "../../assets/img/logo.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../services/api";
+import Sales from '../../assets/img/bg2.jpg';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,38 +10,62 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validateInputs = () => {
+    let isValid = true;
+
+    if (email.trim() === '') {
+      setError("Email is required.");
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      setError("Provide a valid email address.");
+      isValid = false;
+    }
+
+    if (password.trim() === '') {
+      setError("Password is required.");
+      isValid = false;
+    } else if (password.length < 8) {
+      setError("Password must be at least 8 characters.");
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); 
-
-    console.log("response.data");
+    
     const logindata = {
       email: email,
       password: password,
     };
     try {
       const response = await loginUser(logindata);
-      console.log(response.data);
-      if (response.status === 200) {
-        localStorage.setItem("token", response.data?.token);
-        navigate("/home");
-      } else {
-        console.log("Something went wrong!");
-      }
+      const { data } = await loginUser({ email, password });
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      navigate("/");
     } catch (err) {
-      setError("Invalid email or password. Please try again.");
+      setError("Invalid credentials. Please try again.");
     }
   };
 
   return (
-    <div className="w-full h-[100vh] fnt flex justify-center items-center primary">
-      <div className="w-[40%] h-[90%] flex flex-col justify-center items-center pl-20">
-        <img src={Logox} alt="logo" className="w-auto h-[10%] rounded-full" />
+    <div className="w-full h-screen overflow-auto flex justify-center items-center relative bg-opacity-50">
+      <img src={Sales} alt="sales" className="w-full h-full object-cover absolute" />
+      <div className="w-[35%] h-auto max-h-[90%] bg-white bg-opacity-50 rounded-lg p-8 flex flex-col justify-center items-center z-10 shadow-lg">
+       
         <form className="form" onSubmit={handleSubmit}>
-          <p className="form-title">Login to your account</p>
-          {error && <p className="error-message">{error}</p>}{" "}
-        
-          <div className="input-container">
+          <p className="form-title text-xl font-semibold mb-4">Login to your account</p>
+          {error && <p className="error-message text-red-500">{error}</p>}
+
+          <div className="input-container mb-4">
             <input
               type="email"
               placeholder="Email"
@@ -49,9 +73,10 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
+              className="border border-gray-300 rounded-md p-2 w-full"
             />
           </div>
-          <div className="input-container">
+          <div className="input-container mb-4">
             <input
               type="password"
               placeholder="Password"
@@ -59,14 +84,19 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="current-password"
+              className="border border-gray-300 rounded-md p-2 w-full"
             />
           </div>
-          <button type="submit" className="submit">
+          <button type="submit" className="submit bg-[#0a0f0f] text-white p-2 rounded-md hover:bg-[#31958c] transition">
             Login
           </button>
-          <p className="signup-link">
+          <p className="signup-link mt-4">
             No account?
-            <Link to="/signup">Sign up</Link>
+            <Link to="/signup" className="text-[#0a0f0f]"> Sign up</Link>
+          </p>
+          <p className="signup-link mt-2">
+            Admin User?
+            <Link to="/adminlogin" className="text-[#0a0f0f]"> Login</Link>
           </p>
         </form>
       </div>

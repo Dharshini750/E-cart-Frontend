@@ -10,36 +10,29 @@
     background-color: #e2e2e4 ;
 }
 .accent{
-    -webkit-text-fill-color: #2D3748;
+    -webkit-text-fill-color: #040d1b;
 }
 .fnt{
   font-family: cursive;
 }
 .txt{
-  color: cyan;
+  color: white;
   font-family:cursive;
  
 }
 .txtc{
-  color: #2D3748;
+  color: #01070f;
   font-family:cursive;
 }
-/* login form */
+
 .form {
-  background-color: #F7FAFC;
+ 
   display: block;
   padding: 1rem;
   max-width: 350px;
   border-radius: 1.5rem;
-  border-color: solid 5px #2D3748;
-  box-shadow:
-  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
-  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
-  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
-  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
-  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
-  100px 100px 80px rgba(0, 0, 0, 0.07)
-;
+  border-color: solid 5px #000103;
+  
 }
 
 .form-title {
@@ -77,18 +70,19 @@
   padding-bottom: 0.75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  background-color: #38B2AC;
-  color: #2D3748;
+  background-color: #01050c;
+  color: white;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  width: 100%;
+  width: 80%;
   border-radius: 0.5rem;
   text-transform: uppercase;
+  
 }
 
 .signup-link {
-  color: #6B7280;
+  color: #03070f;
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
@@ -96,4 +90,7 @@
 
 .signup-link a {
   text-decoration: underline;
+}
+.b{
+  background-color: rgb(3, 77, 3);
 }
