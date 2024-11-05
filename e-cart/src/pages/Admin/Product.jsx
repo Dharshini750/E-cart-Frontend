@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getproducts, addproduct, deleteProduct, updateProductStock } from '../../services/api';
 
-const ProductManager = () => {
+const Product= () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [cartMessage, setCartMessage] = useState(null);
   const [newProduct, setNewProduct] = useState({
     name: '',
     price: 0,
@@ -47,8 +46,6 @@ const ProductManager = () => {
       alert('Failed to add product.');
     }
   };
-
-  // Delete product
   const handleDelete = async (productId) => {
     try {
       await deleteProduct(productId);
@@ -58,8 +55,6 @@ const ProductManager = () => {
       console.error('Error deleting product:', error);
     }
   };
-
-
   const handleStockChange = async (productId, newStock) => {
     try {
       await updateProductStock(productId, newStock);
@@ -79,16 +74,16 @@ const ProductManager = () => {
   }
 
   return (
-    <div className='w-screen h-screen flex flex-col items-center primary fnt text-xl p-4'>
-      <form onSubmit={handleAddProduct} className='flex flex-col w-full max-w-lg bg-gray-100 border border-black rounded-md shadow-lg p-6 mb-6 gap-4'>
-        <h2 className='text-2xl font-bold'>Add New Product</h2>
-        <input type="text" name="name" value={newProduct.name} onChange={handleProductChange} placeholder="Product Name" required className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
-        <input type="text" name="brand" value={newProduct.brand} onChange={handleProductChange} placeholder="Brand Name" className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
-        <input type="number" name="price" value={newProduct.price} onChange={handleProductChange} placeholder="Price" required className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
-        <input type="number" name="salePrice" value={newProduct.salePrice} onChange={handleProductChange} placeholder="Sale Price" className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
-        <input type="text" name="size" value={newProduct.size} onChange={handleProductChange} placeholder="Size" className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
-        <input type="text" name="image" value={newProduct.image} onChange={handleProductChange} placeholder="Image Url" className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
-        <input type="number" name="stock" value={newProduct.stock} onChange={handleProductChange} placeholder="Stock" className='p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600' />
+    <div className="w-screen h-screen flex flex-col items-center primary fnt text-xl p-4">
+      <form onSubmit={handleAddProduct} className="flex flex-col w-full max-w-lg bg-gray-100 border border-black rounded-md shadow-lg p-6 mb-6 gap-4">
+        <h2 className="text-2xl font-bold">Add New Product</h2>
+        <input type="text" name="name" value={newProduct.name} onChange={handleProductChange} placeholder="Product Name" required className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
+        <input type="text" name="brand" value={newProduct.brand} onChange={handleProductChange} placeholder="Brand Name" className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
+        <input type="number" name="price" value={newProduct.price} onChange={handleProductChange} placeholder="Price" required className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
+        <input type="number" name="salePrice" value={newProduct.salePrice} onChange={handleProductChange} placeholder="Sale Price" className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
+        <input type="text" name="size" value={newProduct.size} onChange={handleProductChange} placeholder="Size" className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
+        <input type="text" name="image" value={newProduct.image} onChange={handleProductChange} placeholder="Image URL" className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
+        <input type="number" name="stock" value={newProduct.stock} onChange={handleProductChange} placeholder="Stock" className="p-2 bg-gray-200 rounded focus:outline-none focus:border-b-2 focus:border-gray-600" />
         <button type="submit" className="bg-blue-600 text-white p-2 rounded mt-2 hover:bg-blue-800">Add Product</button>
       </form>
 
@@ -118,4 +113,4 @@ const ProductManager = () => {
   );
 };
 
-export default ProductManager;
+export default Product;
