@@ -4,11 +4,61 @@ import Checkout from './Checkout';
 import { getproducts } from '../../services/api';
 
 const initialProduct = [
-  { id: 1, brand: "Clara's", name: 'Women Top', price: '750', salePrice: '650', image: 'https://ik.imagekit.io/iayn5eqir/p1.webp?updatedAt=1728494405503', size: 's', gender: 'female', stock: '10' },
-  { id: 2, brand: 'Zudio', name: 'Winter Jacket', price: '1299', salePrice: '899', image: 'https://ik.imagekit.io/iayn5eqir/img/p2.jfif?updatedAt=1728550098652', size: 'xl', gender: 'unisex', stock: '20' },
-  { id: 3, brand: 'Zudio', name: 'Crop Top', price: '499', salePrice: '199', image: 'https://ik.imagekit.io/iayn5eqir/img/p3.jfif?updatedAt=1728550098470', size: 'm', gender: 'female', stock: '13' },
-  { id: 4, brand: 'Biba', name: 'Lehanga', price: '1599', salePrice: '1399', image: 'https://ik.imagekit.io/iayn5eqir/img/p4.jfif?updatedAt=1728550099107', size: 'xl', gender: 'female', stock: '15' },
-  { id: 5, brand: 'Peter England', name: 'Casual Shirt', price: '599', salePrice: '399', image: 'https://ik.imagekit.io/iayn5eqir/img/p5.jfif?updatedAt=1728550099074', size: 'l', gender: 'male', stock: '100' },
+  {  
+     id: 1,
+     brand: "Clara's",
+     name: 'Women Top',
+     price: '750',
+     salePrice: '650',
+     image: 'https://ik.imagekit.io/iayn5eqir/p1.webp?updatedAt=1728494405503',
+     size: 's',
+     gender: 'female',
+     stock: '10' 
+  },
+  { 
+     id: 2,
+     brand: 'Zudio', 
+     name: 'Winter Jacket',
+     price: '1299', 
+     salePrice: '899',
+     image: 'https://ik.imagekit.io/iayn5eqir/img/p2.jfif?updatedAt=1728550098652',
+     size: 'xl',
+     gender: 'unisex',
+      stock: '20' 
+  },
+  {
+     id: 3,
+     brand: 'Zudio',
+     name: 'Crop Top',
+     price: '499', 
+     salePrice: '199', 
+     image: 'https://ik.imagekit.io/iayn5eqir/img/p3.jfif?updatedAt=1728550098470', 
+     size: 'm', 
+     gender: 'female', 
+     stock: '13' 
+    },
+  { 
+    id: 4, 
+    brand: 'Biba', 
+    name: 'Lehanga', 
+    price: '1599', 
+    salePrice: '1399', 
+    image: 'https://ik.imagekit.io/iayn5eqir/img/p4.jfif?updatedAt=1728550099107', 
+    size: 'xl', 
+    gender: 'female', 
+    stock: '15' 
+  },
+  {
+     id: 5, 
+     brand: 'Peter England', 
+     name: 'Casual Shirt', 
+     price: '599', 
+     salePrice: '399', 
+     image: 'https://ik.imagekit.io/iayn5eqir/img/p5.jfif?updatedAt=1728550099074', 
+     size: 'l', 
+     gender: 'male', 
+     stock: '100' 
+    },
   { id: 6, brand: 'Louis Philippe', name: 'Formal Pant for Men', price: '899', salePrice: '699', image: 'https://ik.imagekit.io/iayn5eqir/img/p6.jfif?updatedAt=1728550098694', size: 'm', gender: 'male', stock: '5' },
   { id: 7, brand: "Clara's", name: 'Ethnic Wear', price: '999', salePrice: '799', image: 'https://ik.imagekit.io/iayn5eqir/img/p7.jfif?updatedAt=1728550100640', size: 's', gender: 'female', stock: '10' },
   { id: 8, brand: 'Zudio', name: 'Jacket', price: '2999', salePrice: '1999', image: 'https://ik.imagekit.io/iayn5eqir/img/p8.jfif?updatedAt=1728550100896', size: 'l', gender: 'unisex', stock: '3' },
@@ -191,7 +241,7 @@ const Shop = ({ addToCart }) => {
                 <p style={{ textDecoration: product.salePrice ? 'line-through' : 'none' }}>Rs. {product.price}</p>
                 {product.salePrice && <p style={{ color: 'red' }}>Sale Price: Rs.{product.salePrice}</p>}
                 <p style={{ color: 'black' }}>Size: {product.size}</p>
-                <p style={{ color: 'blue' }}>Stock available: {product.stock}</p>
+                {/* <p style={{ color: 'blue' }}>Stock available: {product.stock}</p> */}
   
                 <div className="ratings">
                   {'★'.repeat(4)}{'☆'.repeat(1)} 

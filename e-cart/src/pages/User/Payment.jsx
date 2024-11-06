@@ -16,6 +16,7 @@ const Payment = () => {
       setMessage('Please fill in all card details.');
       return;
     }
+
     setMessage('Payment successful! ');
     setTimeout(() => {
       navigate('/checkout', { state: { cartItems, quantities, totalAmount, locationAddress, paymentMethod, paymentCompleted: true } });
