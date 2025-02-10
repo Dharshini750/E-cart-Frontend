@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     fs: {
       allow: [
-        'C:/Users/DHARSHINI/OneDrive/Desktop/MERN/E-cart/node_modules/@fortawesome/fontawesome-free/webfonts',
-        'C:/Users/DHARSHINI/OneDrive/Desktop/MERN/E-cart',
-        'C:/Users/DHARSHINI/OneDrive/Desktop/MERN/E-cart/node_modules/vite/dist/client',
+        'C:/Users/DHARSHINI/OneDrive/Documents/MERN/E-cart/node_modules/@fortawesome/fontawesome-free/webfonts',
+        'C:/Users/DHARSHINI/OneDrive/Documents/MERN/E-cart',
+        'C:/Users/DHARSHINI/OneDrive/Documents/MERN/E-cart/node_modules/vite/dist/client',
       ]
     }
   }
