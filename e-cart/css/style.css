@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.primary{
+    background-color: #e2e2e4 ;
+}
+.accent{
+    -webkit-text-fill-color: #040d1b;
+}
+.fnt{
+  font-family: cursive;
+}
+.txt{
+  color: white;
+  font-family:cursive;
+ 
+}
+.txtc{
+  color: #01070f;
+  font-family:cursive;
+}
+
+.form {
+ 
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 1.5rem;
+  border-color: solid 5px #000103;
+  
+}
+
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input, .form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #01050c;
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 80%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  
+}
+
+.signup-link {
+  color: #03070f;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+.b{
+  background-color: rgb(3, 77, 3);
+}
